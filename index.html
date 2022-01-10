@@ -3,17 +3,19 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="style.css" />
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <title>LOTR API TEST</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <title>GoT API Website</title>
     </head>
     <body>
         <div id="menu">
-            <div id="Continents" class="btn"><p>CONTINENTS</p></div>
+            <div id="Continents" class="btn" onclick="getContinents()"><p>CONTINENTS</p></div>
             <div id="Characters" class="btn" onclick="getCharacters()"><p>PERSONNAGES</p></div>
-            <div id="quotes" class="btn"><p>QUOTES</p></div>
+            <div id="Quotes" class="btn" onclick="getQuotes()"><p>QUOTES</p></div>
         </div>
         <div id="container">
-            <div id="characters"></div>  
+            <div id="quotes"></div>
+            <div id="characters"></div>
+            <div id="continents"></div>
         </div>
         
         <script src="script.js"></script>

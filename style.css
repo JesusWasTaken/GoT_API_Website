@@ -2,7 +2,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("./assets/backgroundJS.jpg");
+  background-image: url("./assets/backgroundthrone.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  font-family: "Oswald";
 }
 
 #menu {
@@ -30,6 +34,7 @@ body {
 #characters > div {
   display: flex;
   flex-direction: column;
+  color: white;
 }
 
 .charaImg {
@@ -38,10 +43,23 @@ body {
 }
 
 .btn:hover {
-  background-color: red;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: white;
 }
 
 #menu > div > p {
   color: white;
   margin: unset;
+}
+
+.contName {
+  color: white;
+  font-size: 40px;
+  margin: auto;
+}
+
+.quote {
+  color: white;
+  font-size: 25px;
 }
