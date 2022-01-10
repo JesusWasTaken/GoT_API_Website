@@ -6,14 +6,16 @@ function getCharacters() {
     $.getJSON('https://thronesapi.com/api/v2/Characters', function( data ) {
         for (let i = 0; i < data.length;i++) {
             let current = document.createElement("div");
-            let img = document.createElement("img");
+            let image = document.createElement("img");
             console.log(data[i].imageUrl)
-            img.src = data[i].imageUrl;
+            image.src = data[i].imageUrl;
             let content = document.createTextNode(data[i].fullName);
             current.appendChild(content);
-            current.appendChild(img);
+            current.appendChild(image);
             chara.appendChild(current);
+
         } 
+        $("#characters>div>img").addClass("charaImg");
     });
 }
 

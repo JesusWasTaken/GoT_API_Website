@@ -7,10 +7,15 @@
         <title>LOTR API TEST</title>
     </head>
     <body>
-        <div id="btn" onclick="getCharacters()">GET Characters</div>
-        <div id="characters">
-
+        <div id="menu">
+            <div id="Continents" class="btn"><p>CONTINENTS</p></div>
+            <div id="Characters" class="btn" onclick="getCharacters()"><p>PERSONNAGES</p></div>
+            <div id="quotes" class="btn"><p>QUOTES</p></div>
         </div>
+        <div id="container">
+            <div id="characters"></div>  
+        </div>
+        
         <script src="script.js"></script>
     </body>
 </html>

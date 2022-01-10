@@ -1,0 +1,47 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("./assets/backgroundJS.jpg");
+}
+
+#menu {
+  height: 8vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid rgb(109, 109, 109);
+}
+
+#menu > div {
+  display: flex;
+  width: 33%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+
+#container {
+  height: 92vh;
+}
+
+#characters > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.charaImg {
+  width: 300px;
+  height: auto;
+}
+
+.btn:hover {
+  background-color: red;
+}
+
+#menu > div > p {
+  color: white;
+  margin: unset;
+}
