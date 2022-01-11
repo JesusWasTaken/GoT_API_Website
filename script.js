@@ -33,12 +33,12 @@ function getContinents() {
     jQuery(characters).hide();
     jQuery(quotes).hide();
     if (isContLoaded == false) {
-        $.getJSOn('https://thronesapi.com/api/v2/Continents', function ( data ) {
+        $.getJSON('https://thronesapi.com/api/v2/Continents', function ( data ) {
             for (let i = 0 ; i < data.length ; i++) {
                 let content = data[i].name;
                 let current = document.createElement("p");
-                current.appendChild(content);
-                container.appendChild(current);
+                current.innerText = content;
+                continents.appendChild(current);
             }
             $("#continents>p").addClass("contName");
             isContLoaded = true;
@@ -50,9 +50,10 @@ function getContinents() {
 function getQuotes() {
     jQuery(characters).hide();
     jQuery(continents).hide();
+    quotes.innerHTML = "";
     $.getJSON('https://game-of-thrones-quotes.herokuapp.com/v1/random/5', function( data ) {
-        for (let i = 0; i < 10 ; i++) {
-            let content = data[i].character.name +" : "+data[i].sentence;
+        for (let i = 0; i < data.length ; i++) {
+            let content = " \""+data[i].sentence+"\" - "+data[i].character.name;
             let current = document.createElement("p");
             current.innerText = content;
             quotes.appendChild(current);
