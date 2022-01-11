@@ -87,7 +87,7 @@ function getSpecificQuotes(character, number) {
 function leftCarou() {
     if (count>0 && isCharLoaded) {
         $(characters).animate({
-            left:'+=420px'
+            left:'+=410px'
         });
         count --;
     }
@@ -96,7 +96,7 @@ function leftCarou() {
 function rightCarou() {
     if (count<52 && isCharLoaded) {
         $(characters).animate({
-            left:'-=420px'
+            left:'-=410px'
         });
         count++;
     }
