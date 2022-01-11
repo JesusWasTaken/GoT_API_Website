@@ -1,10 +1,20 @@
 /************************* Variables ***************************/
 
+
+
 let characters = document.getElementById("characters");
 let continents = document.getElementById("continents");
 let quotes = document.getElementById("quotes");
+let arrows = document.getElementById("arrows");
 let isCharLoaded = false;
 let isContLoaded = false;
+let count = 26;
+
+/************************** INIT  **********************************/
+
+$( document ).ready(function() {
+    jQuery(arrows).hide();
+});
 
 /************************* Fonctions API ***************************/
 
@@ -14,22 +24,20 @@ function getCharacters() {
     if (isCharLoaded == false) {
         $.getJSON('https://thronesapi.com/api/v2/Characters', function( data ) {
             for (let i = 0; i < data.length;i++) {
-                let current = document.createElement("div");
-                let image = document.createElement("img");
-                image.src = data[i].imageUrl;
-                let content = document.createTextNode(data[i].fullName);
-                current.appendChild(content);
-                current.appendChild(image);
-                characters.appendChild(current);
+                let card = document.createElement("div");
+                $(card).addClass("card");
+                $(card).css("background-image", "url(" + data[i].imageUrl + ")");
+                characters.appendChild(card);
             } 
-            $("#characters>div>img").addClass("charaImg");
             isCharLoaded = true;
         });
     }
     jQuery(characters).show();
+    jQuery(arrows).show();
 }
 
 function getContinents() {
+    jQuery(arrows).hide();
     jQuery(characters).hide();
     jQuery(quotes).hide();
     if (isContLoaded == false) {
@@ -48,6 +56,7 @@ function getContinents() {
 }
 
 function getQuotes() {
+    jQuery(arrows).hide();
     jQuery(characters).hide();
     jQuery(continents).hide();
     quotes.innerHTML = "";
@@ -73,3 +82,22 @@ function getSpecificQuotes(character, number) {
     });
 }
 
+/*********************** CAROUSEL *************************/
+
+function leftCarou() {
+    if (count>0 && isCharLoaded) {
+        $(characters).animate({
+            left:'+=420px'
+        });
+        count --;
+    }
+}
+
+function rightCarou() {
+    if (count<52 && isCharLoaded) {
+        $(characters).animate({
+            left:'-=420px'
+        });
+        count++;
+    }
+}

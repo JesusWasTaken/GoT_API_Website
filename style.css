@@ -28,7 +28,9 @@ body {
 }
 
 #container {
+  display: flex;
   height: 92vh;
+  flex-direction: column;
 }
 
 #characters > div {
@@ -63,4 +65,54 @@ body {
 .quote {
   color: white;
   font-size: 25px;
+}
+
+/************************ CAROUSEL ********************************/
+
+#characters {
+  position: relative;
+  margin-top: 15vh;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.card {
+  margin: 0 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 35, 0.25);
+  border-radius: 8px;
+  height: 400px;
+  width: 400px;
+  background-position: 50%;
+  background-size: cover;
+  cursor: pointer;
+}
+
+#arrows {
+  position: absolute;
+  justify-content: space-between;
+  width: 400px;
+  left: center;
+  bottom: 10vh;
+  display: flex;
+}
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow > img {
+  height: 70px;
+  width: auto;
+}
+
+.arrow > img:hover {
+  cursor: pointer;
+}
+
+.arrow > img:active {
+  filter: brightness(0.7);
 }
