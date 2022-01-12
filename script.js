@@ -25,11 +25,18 @@ function getCharacters() {
         $.getJSON('https://thronesapi.com/api/v2/Characters', function( data ) {
             for (let i = 0; i < data.length;i++) {
                 let card = document.createElement("div");
+                let details = document.createElement("div");
+                let content = data[i].fullName+", "+data[i].title+"<br>Family : "+data[i].family;
+                details.innerHTML = content;
+                card.appendChild(details);
                 $(card).addClass("card");
+                $(card).attr('id', data[i].id);
+                $(card).attr('onclick', "toggle("+data[i].id+")");
                 $(card).css("background-image", "url(" + data[i].imageUrl + ")");
                 characters.appendChild(card);
             } 
             isCharLoaded = true;
+            jQuery(".card>div").hide();
         });
     }
     jQuery(characters).show();
@@ -47,6 +54,7 @@ function getContinents() {
                 let current = document.createElement("p");
                 current.innerText = content;
                 continents.appendChild(current);
+                $(current).attr("onclick",'customNav("https://fr.wikipedia.org/wiki/'+data[i].name+'")')
             }
             $("#continents>p").addClass("contName");
             isContLoaded = true;
@@ -82,12 +90,16 @@ function getSpecificQuotes(character, number) {
     });
 }
 
+function customNav(link) {
+    window.open(link, '_blank');
+}
+
 /*********************** CAROUSEL *************************/
 
 function leftCarou() {
     if (count>0 && isCharLoaded) {
         $(characters).animate({
-            left:'+=415px'
+            left:'+=432px'
         });
         count --;
     }
@@ -96,8 +108,12 @@ function leftCarou() {
 function rightCarou() {
     if (count<52 && isCharLoaded) {
         $(characters).animate({
-            left:'-=415px'
+            left:'-=432px'
         });
         count++;
     }
+}
+
+function toggle(id) {
+    $("#"+id+">div").toggle();
 }

@@ -33,12 +33,6 @@ body {
   flex-direction: column;
 }
 
-#characters > div {
-  display: flex;
-  flex-direction: column;
-  color: white;
-}
-
 .charaImg {
   width: 300px;
   height: auto;
@@ -67,18 +61,6 @@ body {
   overflow: hidden;
 }
 
-.card {
-  margin: 0 1rem;
-  overflow: hidden;
-  box-shadow: 0 10px 20px 0 rgba(0, 0, 35, 0.25);
-  border-radius: 8px;
-  height: 400px;
-  width: 400px;
-  background-position: 50%;
-  background-size: cover;
-  cursor: pointer;
-}
-
 #arrows {
   position: absolute;
   justify-content: space-between;
@@ -98,28 +80,66 @@ body {
   width: auto;
 }
 
-.arrow > img:hover {
+.arrow > img:hover,
+.contName:hover {
   cursor: pointer;
+  filter: brightness(1.2);
 }
 
-.arrow > img:active {
+.arrow > img:active,
+.contName:active {
   filter: brightness(0.7);
+}
+/************************* CHARACTERS ************************/
+
+.card {
+  margin: 0 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 35, 0.25);
+  border-radius: 8px;
+  height: 400px;
+  width: 400px;
+  background-position: 50%;
+  background-size: cover;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.card > div {
+  background-image: url("./assets/texture.jpg");
+  color: rgb(0, 0, 0);
+  font-size: 23px;
+  text-align: center;
+  font-weight: bold;
+  border-top: 5px solid rgb(109, 71, 2);
 }
 
 /************************* QUOTES *************************/
 
 #quotes {
+  margin-top: 8vh;
 }
 
-.quote {
-  color: white;
-  font-size: 25px;
+.quote,
+.contName {
+  color: rgb(0, 0, 0);
+  font-size: 23px;
+  padding: 20px;
+  font-weight: bold;
+  border: 5px solid rgb(109, 71, 2);
+  background-image: url("./assets/texture.jpg");
 }
 
 /*********************** CONTINENTS ************************/
 
 .contName {
-  color: white;
-  font-size: 40px;
-  margin: auto;
+  font-size: 35px;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: center;
+}
+
+#continents {
+  margin-top: 8vh;
 }
