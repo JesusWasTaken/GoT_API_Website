@@ -56,17 +56,6 @@ body {
   margin: unset;
 }
 
-.contName {
-  color: white;
-  font-size: 40px;
-  margin: auto;
-}
-
-.quote {
-  color: white;
-  font-size: 25px;
-}
-
 /************************ CAROUSEL ********************************/
 
 #characters {
@@ -115,4 +104,22 @@ body {
 
 .arrow > img:active {
   filter: brightness(0.7);
+}
+
+/************************* QUOTES *************************/
+
+#quotes {
+}
+
+.quote {
+  color: white;
+  font-size: 25px;
+}
+
+/*********************** CONTINENTS ************************/
+
+.contName {
+  color: white;
+  font-size: 40px;
+  margin: auto;
 }
